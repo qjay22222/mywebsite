@@ -1,0 +1,18 @@
+#angular-main {
+  display: block;
+  position: relative;
+  min-height: 800px;
+}
+
+#angular-main::after {
+  content: "";
+  background: url("https://media.treehugger.com/assets/images/2017/01/sleep-wolf.jpg.662x0_q70_crop-scale.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

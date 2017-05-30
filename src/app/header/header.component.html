@@ -1,0 +1,84 @@
+<!--<nav class="navbar navbar-default">-->
+<!--<div class="container-fluid">-->
+<!--<div class="navbar-header" >-->
+<!--<li><a routerLink="/" routerLinkActive="active" class="navbar-brand">About this Site</a></li>-->
+<!--</div>-->
+<!--<div class="collapse navbar-collapse">-->
+<!--<ul class="navbar-nav nav">-->
+<!--<li><a routerLink="/angular" routerLinkActive="active">Angular</a></li>-->
+<!--</ul>-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li appDropdown routerLinkActive="active">-->
+<!--<a routerLink="/passion" class="dropdown-toggle" role="button">my Passions<span class="caret"></span></a>-->
+<!--<ul class="dropdown-menu">-->
+<!--<li><a href="#">P1</a></li>-->
+<!--<li><a href="#">P2</a></li>-->
+<!--</ul>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li appDropdown routerLinkActive="active">-->
+<!--<a routerLink="/projects" class="dropdown-toggle" role="button">Other Projects<span class="caret"></span></a>-->
+<!--<ul class="dropdown-menu">-->
+<!--<li><a href="#">Project 1</a></li>-->
+<!--<li><a href="#">Project 2</a></li>-->
+<!--</ul>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul class="navbar-nav nav">-->
+<!--<li><a routerLink="/nutrition" >Nutrition</a></li>-->
+<!--</ul>-->
+<!--<ul class="nav navbar-nav navbar-right">-->
+<!--<li appDropdown>-->
+<!--<a routerLink="/manage" class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>-->
+<!--<ul class="dropdown-menu">-->
+<!--<li><a href="#">Login Function</a></li>-->
+<!--<li><a href="#">Bla bla bla</a></li>-->
+<!--</ul>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</nav>-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">About this Site</a>
+        </li>
+        <li routerLinkActive="active"><a routerLink="/angular">Tools used for this Site</a></li>
+        <li appDropdown  routerLinkActive="active">
+          <a routerLink="/passion" class="dropdown-toggle" role="button">my Passions<span
+            class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <a *ngFor="let passion of getPassions()">
+              <li><a href="#">{{passion.getTitle()}}</a></li>
+            </a>
+          </ul>
+        </li>
+        <li appDropdown routerLinkActive="active">
+          <a routerLink="/projects" class="dropdown-toggle" role="button" >Other Projects<span
+            class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <a *ngFor="let passion of getPassions()">
+              <li><a href="#">{{passion.getTitle()}}</a></li>
+            </a>
+          </ul>
+        </li>
+        <li routerLinkActive="active"><a routerLink="/nutrition">Nutrition</a></li>
+        <li routerLinkActive="active"><a routerLink="/fitness" >Fitness</a></li>
+        <li appDropdown routerLinkActive="active">
+          <a routerLink="/manage" class="dropdown-toggle" role="button" >Manage<span
+            class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Login Function</a></li>
+            <li><a href="#">Bla bla bla</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
