@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {PassionService} from '../../shared/passion.service';
+import {Passion} from 'app/my-passions/passion/passion.model';
 
 @Component({
   selector: 'app-passion',
@@ -8,32 +10,19 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class PassionComponent implements OnInit {
 
-  private title: string;
-  private description: string;
-  private myDescription: string;
-  constructor(private route: ActivatedRoute) {
+  // private title: string;
+  // private description: string;
+  // private myDescription: string;
+  @Input() passion: Passion;
+
+  constructor(private passionService: PassionService) {
   }
 
-  setTitle(title: string) {
-    this.title = title;
-  }
-  getTitle() {
-    return this.title;
+
+  passionSelectedEmit() {
+    this.passionService.passionSelected.emit(this.passion);
   }
 
-  setDescription(description: string) {
-    this.description = description;
-  }
-  getDescription() {
-    return this.description;
-  }
-
-  setMyDescription(myDescription: string) {
-
-  }
-  getMyDescriptoin() {
-    return this.myDescription;
-  }
 
   ngOnInit() {
   }

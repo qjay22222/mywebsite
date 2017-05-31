@@ -50,32 +50,36 @@
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">About this Site</a>
         </li>
         <li routerLinkActive="active"><a routerLink="/angular">Tools used for this Site</a></li>
-        <li appDropdown  routerLinkActive="active">
-          <a routerLink="/passion" class="dropdown-toggle" role="button">my Passions<span
-            class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <a *ngFor="let passion of getPassions()">
-              <li><a href="#">{{passion.getTitle()}}</a></li>
-            </a>
-          </ul>
+        <li routerLinkActive="active">
+          <a routerLink="/passion" role="button">my Passions</a>
+          <!--<li appDropdown  routerLinkActive="active">-->
+          <!--<a routerLink="/passion" class="dropdown-toggle" role="button">my Passions<span-->
+          <!--class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+          <!--<a *ngFor="let passion of getPassions()">-->
+          <!--<li><a href="#">{{passion.getTitle()}}</a></li>-->
+          <!--</a>-->
+          <!--</ul>-->
         </li>
-        <li appDropdown routerLinkActive="active">
-          <a routerLink="/projects" class="dropdown-toggle" role="button" >Other Projects<span
-            class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <a *ngFor="let passion of getPassions()">
-              <li><a href="#">{{passion.getTitle()}}</a></li>
-            </a>
-          </ul>
+        <li routerLinkActive="active">
+          <a routerLink="/projects" role="button">Other Projects</a>
+          <!--<li appDropdown routerLinkActive="active">-->
+          <!--<a routerLink="/projects" class="dropdown-toggle" role="button" >Other Projects<span-->
+          <!--class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+          <!--<a *ngFor="let passion of getPassions()">-->
+          <!--<li><a href="#">{{passion.getTitle()}}</a></li>-->
+          <!--</a>-->
+          <!--</ul>-->
         </li>
         <li routerLinkActive="active"><a routerLink="/nutrition">Nutrition</a></li>
-        <li routerLinkActive="active"><a routerLink="/fitness" >Fitness</a></li>
+        <li routerLinkActive="active"><a routerLink="/fitness">Fitness</a></li>
         <li appDropdown routerLinkActive="active">
-          <a routerLink="/manage" class="dropdown-toggle" role="button" >Manage<span
+          <a class="dropdown-toggle" role="button">Manage<span
             class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Login Function</a></li>
-            <li><a href="#">Bla bla bla</a></li>
+            <li><a routerLink="/login">Login Function</a></li>
+            <li><a routerLink="/test-environment">Bla bla bla</a></li>
           </ul>
         </li>
       </ul>

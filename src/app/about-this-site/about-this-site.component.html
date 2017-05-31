@@ -4,7 +4,7 @@
     <h1 class="text-center">{{greetings}}</h1>
     <span>{{contentText}}</span>
   </div>
-  <div *ngFor="let news of newsService.getNewsList()">
+  <div *ngFor="let news of getNewsService().getNewsList()">
     <hr>
     <h3 class="text-center">{{news.getTitle()}}</h3>
     <div class="text-center">{{news.getText()}}</div>

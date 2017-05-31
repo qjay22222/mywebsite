@@ -1,16 +1,29 @@
+<!--<div id="passion-main">-->
+<!--<h1 class="text-center">{{passionText}}</h1>-->
+<!--<hr>-->
+<!--<div class="col-md-2">-->
+<!--<div class="btn-group-vertical" role="group" aria-label="...">-->
+<!--<a class="btn btn-primary" *ngFor="let passion of passionService.getPassions()">{{passion.getTitle()}}</a>-->
+<!--</div>-->
+<!--<app-passion *ngFor="let passion of getPassions()">asdasd</app-passion>-->
+<!--</div>-->
+<!--<div class="col-md-10"></div>-->
+
 <div id="passion-main">
   <h1 class="text-center">{{passionText}}</h1>
-  <hr>
-  <div class="col-md-2">
-    <div class="btn-group-vertical" role="group" aria-label="...">
-      <a class="btn btn-primary" *ngFor="let passion of passionService.getPassions()">{{passion.getTitle()}}</a>
+
+  <div class="row">
+    <div class="col-md-1" role="group">
+      <div class="btn-group-vertical" role="group" aria-label="...">
+        <app-passion [passion]="passion" *ngFor="let passion of getPassions()"></app-passion>
+      </div>
+    </div>
+    <div class="col-md-11">
+      <app-passion-details
+        [passion]="selectedPassion"
+        *ngIf="selectedPassion; else infoText"></app-passion-details>
+      <ng-template #infoText>Please click a Link!</ng-template>
     </div>
   </div>
-  <div class="col-md-10">dfsdf</div>
 
-
-
-
-
-
-
+</div>

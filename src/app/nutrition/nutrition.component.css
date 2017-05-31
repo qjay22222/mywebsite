@@ -1,0 +1,19 @@
+
+#nutrition-main {
+  display: block;
+  position: relative;
+  min-height: 800px;
+}
+
+#nutrition-main::after {
+  content: "";
+  background: url("http://wire.kapitall.com/wp-content/image-import/healthy-food-stocks.jpeg");
+  background-size: cover;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

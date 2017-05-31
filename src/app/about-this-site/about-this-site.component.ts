@@ -19,6 +19,10 @@ export class AboutThisSiteComponent implements OnInit {
 
   constructor(private newsService: NewsService) { }
 
+  getNewsService() {
+    return this.newsService;
+  }
+
   ngOnInit() {
   }
 

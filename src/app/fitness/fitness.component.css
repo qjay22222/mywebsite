@@ -1,0 +1,19 @@
+
+#fitness-main {
+  display: block;
+  position: relative;
+  min-height: 800px;
+}
+
+#fitness-main::after {
+  content: "";
+  background: url("http://www.afaa.com/Sitefinity/WebsiteTemplates/AFAA/App_Themes/AFAA_Theme/assets/images/triple1.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
