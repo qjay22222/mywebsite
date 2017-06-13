@@ -1,0 +1,20 @@
+
+#games-main {
+  display: block;
+  position: relative;
+  min-height: 800px;
+}
+
+
+#games-main::after {
+  content: "";
+  background: url("http://southfront.org/wp-content/uploads/2015/10/fist-fight-shutterstock-crop.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

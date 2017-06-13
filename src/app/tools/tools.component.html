@@ -1,12 +1,12 @@
-<div id="angular-main" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<div id="angular-main">
   <h1 class="text-center">{{headerText}}</h1>
   <hr>
   <div class="col-md-1">
     <div class="btn-group-vertical" role="group" aria-label="...">
-      <a class="btn btn-primary" [routerLink]="['angular']">Angular</a>
-      <a class="btn btn-primary" [routerLink]="['bootstrap']">Bootstrap</a>
-      <a class="btn btn-primary" [routerLink]="['webstorm']">Webstorm</a>
-      <a class="btn btn-primary" [routerLink]="['udemy']">Udemy</a>
+      <a class="btn btn-primary"  [@buttonFlyIn]="state" [routerLink]="['angular']">Angular</a>
+      <a class="btn btn-primary"  [@buttonFlyIn2]="state" [routerLink]="['bootstrap']">Bootstrap</a>
+      <a class="btn btn-primary"  [@buttonFlyIn3]="state" [routerLink]="['webstorm']">Webstorm</a>
+      <a class="btn btn-primary"  [@buttonFlyIn4]="state" [routerLink]="['udemy']">Udemy</a>
     </div>
   </div>
   <div class="col-md-11">

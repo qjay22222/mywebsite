@@ -11,19 +11,31 @@
 
 <div id="passion-main">
   <h1 class="text-center">{{passionText}}</h1>
+  <hr>
+  <!--<div class="col-md-1">-->
+  <!--<div class="btn-group-vertical" role="group" aria-label="...">-->
+  <!--<app-passion [passion]="passion" *ngFor="let passion of getPassions()"></app-passion>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-11">-->
+  <!--<app-passion-details-->
+  <!--[passion]="selectedPassion"-->
+  <!--*ngIf="selectedPassion; else infoText"></app-passion-details>-->
+  <!--<ng-template #infoText>Please click a Link!</ng-template>-->
+  <!--</div>-->
+  <div class="col-md-1">
+    <div class="btn-group-vertical" role="group" aria-label="...">
+      <div class="btn btn-primary" [@buttonFlyIn6]="state" routerLink="reading" (click)="bs.reset()">Reading</div>
+      <div class="btn btn-primary" [@buttonFlyIn5]="state" routerLink="meditation">Meditation</div>
+      <div class="btn btn-primary" [@buttonFlyIn4]="state" routerLink="nutrition">Nutrition</div>
+      <div class="btn btn-primary" [@buttonFlyIn3]="state" routerLink="fitness">Fitness</div>
+      <div class="btn btn-primary" [@buttonFlyIn2]="state" routerLink="traveling">Traveling</div>
+      <div class="btn btn-primary" [@buttonFlyIn]="state" routerLink="games">Games</div>
+    </div>
+  </div>
+  <div class="col-md-11">
+    <router-outlet></router-outlet>
 
-  <div class="row">
-    <div class="col-md-1" role="group">
-      <div class="btn-group-vertical" role="group" aria-label="...">
-        <app-passion [passion]="passion" *ngFor="let passion of getPassions()"></app-passion>
-      </div>
-    </div>
-    <div class="col-md-11">
-      <app-passion-details
-        [passion]="selectedPassion"
-        *ngIf="selectedPassion; else infoText"></app-passion-details>
-      <ng-template #infoText>Please click a Link!</ng-template>
-    </div>
   </div>
 
 </div>

@@ -1,0 +1,9 @@
+<div [@buttonFlyIn]="state" *ngIf="bs.enableReadBooks">
+<div class="btn btn-default" style="min-width: 300px; max-width: 300px" (click)="bs.toEnableReadBooks()" routerLink="booksRead">A List of my favorite Books and my review</div>
+</div>
+
+<div [@buttonFlyIn2]="state" *ngIf="bs.enableToReadBooks">
+<div class="btn btn-default"  style="min-width: 300px; max-width: 300px" (click)="bs.toEnableToReadBooks()" routerLink="booksToRead">A List of books on my to read list</div>
+</div>
+<div>
+<router-outlet></router-outlet></div>

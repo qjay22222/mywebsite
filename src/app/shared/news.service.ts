@@ -1,21 +1,68 @@
 import {News} from './news.model';
+import {Injectable, OnInit} from '@angular/core';
+import {Http, Response} from '@angular/http';
+import 'rxjs/Rx';
+import {forEach} from '@angular/router/src/utils/collection';
 
-export class NewsService {
+@Injectable()
+export class NewsService implements OnInit {
 
-  private newsList: News[] = [new News('29.05.2017', 'erste news', 'jow, heut wurde die seite erstmal erstellt, bin noch ein angular newb, aber es macht auf jedenfall mega spaß die seite von scratch aufzubauen', 'qjay'),
-    new News('29.05.2017', 'zweite news', 'jow, im News model wird das Datum vorerst mal als string gespeichert, später sollte das natürlich wirklich ein datum sein', 'qjay'),
-    new News('29.05.2017', 'dritte news', 'jow, todo: login funktion für users und admin, admin wenn eingeloggt sollte in der lage sein news zu posten, die im backend dann persistiert werden ', 'qjay'),
-    new News('29.05.2017', 'vierte news', 'jow, news items sollten dann vom backend geladen werden, die der admin davor gepostet hat', 'qjay'),
-    new News('29.05.2017', 'fünfte news', 'die gleiche funktionalität natürlich auch für die anderen services', 'qjay'),
-    new News('30.05.2017', 'sechste news', 'das carousel muss mal für angular 4 angepasst werden', 'qjay'),
-    new News('30.05.2017', 'siebte news', 'Die background fotos sind pro forma drin, sind aus dem web geklaut, sollte auch geändert werden', 'qjay')];
-  constructor() {}
+
+  private newsList: News[] = [];
+
+
+  constructor(private http: Http) {
+
+    console.log('Newsservice initializiert');
+    this.getNewsFromServer().subscribe(
+      (newsList: any[]) => {
+        // newsList.reverse();
+        console.log(newsList);
+        this.newsList = newsList;
+
+      },
+      (error) => console.log(error)
+    );
+
+
+
+  }
+
+  ngOnInit() {
+
+  }
+
 
   addNews(news: News) {
     this.newsList.push(news);
   }
 
   getNewsList() {
-    return this.newsList.slice().reverse();
+    return this.newsList;
   }
+
+  getNewsFromServer() {
+    return this.http.get('https://mybackend-a7cfa.firebaseio.com/data.json')
+      .map(
+        function(res){
+          const data = res.json();
+          console.log('loggen erstmal das oberste json file: ');
+          console.log(data);
+          console.log(typeof data);
+
+          const returnList = new Array<News>();
+          for (const aObject of data){
+            returnList.push(new News(aObject.date, aObject.title, aObject.text, aObject.autor));
+          }
+          return returnList;
+        }
+      );
+  }
+
+
+  addNewsToServers(news: News[]) {
+    // TODO Server im moment auf write für ALLE, TODO, user admin AUthentication, sodass man nur psoten darf wenn man eingeloggt als admin
+    return this.http.put('https://mybackend-a7cfa.firebaseio.com/data.json', news);
+  }
+
 }

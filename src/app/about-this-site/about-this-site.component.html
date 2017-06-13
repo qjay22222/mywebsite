@@ -1,13 +1,19 @@
 <div id="about-main">
-  <app-carousel></app-carousel>
   <div>
     <h1 class="text-center">{{greetings}}</h1>
-    <span>{{contentText}}</span>
+    <div class="text-center">{{contentText}}</div>
   </div>
+  <hr>
+  <h1 class="text-center">News Section</h1>
+  <hr>
   <div *ngFor="let news of getNewsService().getNewsList()">
     <hr>
-    <h3 class="text-center">{{news.getTitle()}}</h3>
-    <div class="text-center">{{news.getText()}}</div>
-    <p class="text-left">{{news.getDate()}}</p><p class="text-right">{{news.getAutor()}}</p>
+    <h3 class="text-center">{{news.title}}</h3>
+    <div class="text-center">{{news.text}}</div>
+    <p class="text-left">{{news.date}}</p><p class="text-right">{{news.autor}}</p>
   </div>
+  <div *ngIf="loginService.adminLoggedIn">
+    <div>Admin Logged in </div>
+  </div>
+  <div *ngIf="!loginService.adminLoggedIn">Admin not logged in </div>
 </div>

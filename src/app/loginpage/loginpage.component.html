@@ -1,0 +1,38 @@
+<div class = "container">
+  <div>
+    <h1>LOGIN PAGE</h1>
+  </div>
+
+
+
+<div *ngIf="loginService.adminLoggedIn">
+  Logged in als Addmin
+  <button (click)="logout()"> Logout</button>
+</div>
+
+<div *ngIf="!loginService.adminLoggedIn">
+  <hr>
+  Switch to
+  <button *ngIf="registerControl" class="btn btn-default" (click)="registerControl=!registerControl"> Login</button>
+  <button *ngIf="!registerControl" class="btn btn-default" (click)="registerControl=!registerControl"> Register</button>
+  <div *ngIf="registerControl">
+    <hr>
+    <h1>Register</h1>
+    <label for="rUname">Benutzername</label>
+    <input type="text" name="email" id="rUname" required [(ngModel)]="rUsername">
+    <label for="rPass">Passwort</label>
+    <input type="password" name="password" id="rPass" required [(ngModel)]="rPassword">
+    <button class="btn btn-default" (click)="register()">Register</button>
+  </div>
+
+  <div *ngIf="!registerControl">
+    <hr>
+    <h1>Login</h1>
+    <label for="lUname">Benutzername</label>
+    <input type="text" name="email" id="lUname"  required [(ngModel)]="lUsername">
+    <label for="lPass">Passwort</label>
+    <input type="password" name="password" id="lPass" required [(ngModel)]="lPassword">
+    <button class="btn btn-default" (click)="login()">Login</button>
+  </div>
+</div>
+</div>

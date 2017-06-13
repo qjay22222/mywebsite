@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NewsService} from '../shared/news.service';
+import {LoginServiceService} from '../shared/login-service.service';
 
 @Component({
   selector: 'app-about-this-site',
@@ -8,16 +9,11 @@ import {NewsService} from '../shared/news.service';
 })
 export class AboutThisSiteComponent implements OnInit {
 
-  greetings = 'Qjays little first Web Project';
-  contentText = 'this is a Site made by me using Angular 4 and the Twitter framework Bootstrap....' +
-    'i will keep this continously updated and will implement new features over Time as i get more ' +
-    'used to Angular etc... ' +
-    'first i wanna work on the Frontend part, as i am finishing that, i will set up a backend with newsupdates' +
-    ' and other features to be implemented once the backend is ready' +
-  ' until then enjoy my little updates';
+  greetings = 'Qjays little test Project';
+  contentText = 'Hi, i just got started learning angular and this is what i built so far. over time i ll try to implement new features. ';
 
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService, private loginService: LoginServiceService) { }
 
   getNewsService() {
     return this.newsService;

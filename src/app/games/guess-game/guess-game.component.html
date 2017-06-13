@@ -1,0 +1,37 @@
+<h4> Guess Game</h4>
+<h6><p>Das Spiel started bei 100 Punkten,</p>
+  <p>Du und der Computer spielt jeweils abwechselnd eine Runde nach dem anderen bis das Spiel beendet ist.</p>
+  <p>Gewonnen hat der Spieler, der als erstes 0 Punkte erreich bzw verloren der, der als erstes unter 0 fällt</p>
+  <p>Jede Runde kann ein zufälliger Rechenoperator erscheinen, den du grabben darfst (Jeder Spieler startet mit einem -
+    Operator)</p>
+  <p>Jede Runde kann der Spieler zu dem Punktestand eine von Ihm gewählte Zahl zwischen 1-10 wählen. Auf den Punktestand
+    wird dann die eingegebene Zahl mit dem Operator berechnet</p>
+
+</h6>
+
+<div class="col-md-10">
+  <div class="row">
+    <div class="btn btn-primary" (click)="startGame()">start Game</div>
+    <div class="btn btn-primary" (click)="resetGame()">reset Game</div>
+  </div>
+  <div *ngIf="gameStarted" class="text-center">
+    <div>runningNumber</div>
+    <div class="panel panel-primary">
+      <div class="panel-body">{{runningNumber}}</div>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-body">{{computerTurnMessage}}</div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-body">{{yourTurnMessage}}</div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-body">Deine derzeit ausgerüstete Rechenoperation <h5>{{yourOperand}}</h5></div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-body">Computers derzeit ausgerüstete Rechenoperation <h5>{{computerOperand}}</h5></div>
+    </div>
+    <input type="number" min="1" max="10" value="0" ngModel placeholder="Your Input"required>
+    <div class="btn btn-primary" (click)="submitInput()">submit</div>
+  </div>
+</div>

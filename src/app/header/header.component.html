@@ -5,7 +5,7 @@
 <!--</div>-->
 <!--<div class="collapse navbar-collapse">-->
 <!--<ul class="navbar-nav nav">-->
-<!--<li><a routerLink="/angular" routerLinkActive="active">Angular</a></li>-->
+<!--<li><a routerLintoolsular" routerLinkActive="active">Angular</a></li>-->
 <!--</ul>-->
 <!--<ul class="nav navbar-nav">-->
 <!--<li appDropdown routerLinkActive="active">-->
@@ -43,15 +43,15 @@
 <!--</nav>-->
 
 
-<div class="container">
+<div id="header-main">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <ul class="nav nav-tabs">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">About this Site</a>
         </li>
-        <li routerLinkActive="active"><a routerLink="/angular">Tools used for this Site</a></li>
+        <li routerLinkActive="active"><a routerLink="/tools">Tools used for this Site</a></li>
         <li routerLinkActive="active">
-          <a routerLink="/passion" role="button">my Passions</a>
+          <a routerLink="/passion" role="button">Hobbies</a>
           <!--<li appDropdown  routerLinkActive="active">-->
           <!--<a routerLink="/passion" class="dropdown-toggle" role="button">my Passions<span-->
           <!--class="caret"></span></a>-->
@@ -74,14 +74,16 @@
         </li>
         <li routerLinkActive="active"><a routerLink="/nutrition">Nutrition</a></li>
         <li routerLinkActive="active"><a routerLink="/fitness">Fitness</a></li>
+        <li routerLinkActive="active"><a routerLink="/games">Games</a></li>
         <li appDropdown routerLinkActive="active">
           <a class="dropdown-toggle" role="button">Manage<span
             class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/login">Login Function</a></li>
-            <li><a routerLink="/test-environment">Bla bla bla</a></li>
+            <li><a routerLink="/loginpage">Login Page</a></li>
           </ul>
         </li>
+        <li routerLinkActive="active" *ngIf="loginService.adminLoggedIn"><a routerLink="/postNews">Post News</a></li>
+        <li routerLinkActive="active" *ngIf="loginService.adminLoggedIn"><a (click)="loginService.logout()">Logout</a></li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,16 @@
+<div id="games-main">
+  <h1 class="text-center">Games</h1>
+  <hr>
+  <div class="col-md-2">
+    <div class="btn-group-vertical" role="group" aria-label="...">
+      <a class="btn btn-primary" [routerLink]="['guessgame']">Guess Game</a>
+      <a class="btn btn-primary" [routerLink]="['2']">2</a>
+      <a class="btn btn-primary" [routerLink]="['3']">3</a>
+      <a class="btn btn-primary" [routerLink]="['4']">4</a>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

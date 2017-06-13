@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Logged in as Admin, Time to post some News</h1>
+
+  <div><label for="title">Titel</label>
+    <input id="title" [(ngModel)]="title">
+  </div>
+  <div>
+    <label for="date">Datum</label>
+    <input id="date" [(ngModel)]="date">
+  </div>
+  <div>
+    <label for="autorname">Autor</label>
+    <input id="autorname" [(ngModel)]="autor">
+  </div>
+  <div>
+    <label for="text">text</label>
+    <textarea id="text" rows="10" [(ngModel)]="text"></textarea>
+  </div>
+  <div class="btn btn-default" (click)="submit()">Submit</div>
+
+
+</div>

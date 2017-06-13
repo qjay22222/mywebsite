@@ -8,7 +8,7 @@
 
 #about-main::after {
   content: "";
-  background: url("http://southfront.org/wp-content/uploads/2015/10/fist-fight-shutterstock-crop.jpg");
+  background: url("fist.jpg");
   background-size: cover;
   opacity: 0.3;
   top: 0;
@@ -18,3 +18,4 @@
   position: absolute;
   z-index: -1;
 }
+

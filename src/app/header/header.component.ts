@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PassionService} from '../shared/passion.service';
+import {LoginServiceService} from '../shared/login-service.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import {PassionService} from '../shared/passion.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private passionService: PassionService) { }
+  constructor(private passionService: PassionService, private loginService: LoginServiceService) { }
 
   getPassions() {
     return this.passionService.getPassions();

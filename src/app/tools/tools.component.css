@@ -6,7 +6,7 @@
 
 #angular-main::after {
   content: "";
-  background: url("https://media.treehugger.com/assets/images/2017/01/sleep-wolf.jpg.662x0_q70_crop-scale.jpg");
+  background: url("wolf.jpg");
   background-size: cover;
   opacity: 0.3;
   top: 0;
